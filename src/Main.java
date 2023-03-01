@@ -52,7 +52,7 @@ public class Main {
         int ressult = Calculate.vert(numberA, numberB,numberC);
 
         if (!a) {
-            System.out.println(Calculate.convertRimThree(ressult));
+            System.out.println(Calculate.convertRimOne(ressult));
         } else
             System.out.println(ressult);
     }

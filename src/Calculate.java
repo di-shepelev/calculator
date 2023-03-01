@@ -51,10 +51,10 @@ class Calculate {
                 throw new Exception("Римские числа не могут быть больше X");
         }
     }
-    static String convertRimThree(int a) {
+    static String convertRimOne(int a) {
         String b = null;
         if (a <= 10){
-            b = convertRimOne(a);
+            b = convertRimThree(a);
         } else if (a == 100) {
             b = "C";
         } else {
@@ -63,7 +63,31 @@ class Calculate {
         }
         return b;
     }
-    static String convertRimOne(int a) {
+    static String convertRimTwo(int a) {
+        String b = Integer.toString(a);
+        String c = String.valueOf(b.charAt(0));
+        if (c.equals("1")) {
+            b = "X";
+        } else if (c.equals("2")) {
+            b = "XX";
+        } else if (c.equals("3")) {
+            b = "XXX";
+        } else if (c.equals("4")) {
+            b = "XL";
+        } else if (c.equals("5")) {
+            b = "L";
+        } else if (c.equals("6")) {
+            b = "LX";
+        } else if (c.equals("7")) {
+            b = "LXX";
+        } else if (c.equals("8")) {
+            b = "LXXX";
+        } else if (c.equals("9")) {
+            b = "XC";
+        }
+        return b;
+    }
+    static String convertRimThree(int a) {
         String b = null;
         if (a == 1) {
             b = "I";
@@ -111,31 +135,6 @@ class Calculate {
             b = "IV";
         } else if (c.equals("0")) {
             b = "";
-        }
-        return b;
-
-    }
-    static String convertRimTwo(int a) {
-        String b = Integer.toString(a);
-        String c = String.valueOf(b.charAt(0));
-        if (c.equals("1")) {
-            b = "X";
-        } else if (c.equals("2")) {
-            b = "XX";
-        } else if (c.equals("3")) {
-            b = "XXX";
-        } else if (c.equals("4")) {
-            b = "XL";
-        } else if (c.equals("5")) {
-            b = "L";
-        } else if (c.equals("6")) {
-            b = "LX";
-        } else if (c.equals("7")) {
-            b = "LXX";
-        } else if (c.equals("8")) {
-            b = "LXXX";
-        } else if (c.equals("9")) {
-            b = "XC";
         }
         return b;
     }
