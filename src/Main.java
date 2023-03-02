@@ -2,11 +2,17 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) throws Exception {
+
         Scanner console = new Scanner(System.in);
 
         String expression = console.nextLine();
 
-        String[] array = expression.split(" ");
+        System.out.println(calc(expression));
+
+    }
+    public static String calc(String input) throws Exception {
+
+        String[] array = input.split(" ");
 
         if (array.length != 3) {
             throw new Exception("Калькулятор выполняет операции следующего вида: a * b, a / b, a - b, a + b");
@@ -45,15 +51,16 @@ public class Main {
             throw new Exception("Введенное число больше 10");
         }
 
-        if ((!a) && (numberA < numberC)) {
-            throw new Exception("В римской системе нет отрицательных чисел");
+        if (((!a) && (numberA < numberC)) && (array[1].equals("-") || array[1].equals("/"))) {
+            throw new Exception("В римской системе нет нуля и отрицательных чисел");
         }
 
         int ressult = Calculate.vert(numberA, numberB,numberC);
 
         if (!a) {
-            System.out.println(Calculate.convertRimOne(ressult));
-        } else
-            System.out.println(ressult);
+            return Calculate.convertRimOne(ressult);
+        } else {
+            return Integer.toString(ressult);
+        }
     }
 }
